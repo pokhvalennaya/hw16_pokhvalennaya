@@ -1,0 +1,16 @@
+#albums {
+  font: italic 20px/24px Arial;
+  list-style-type: none;
+  padding: 20px 0 0 20px;
+  margin: 0;
+}
+.delete {
+  color: black;
+  font: italic 16px/20px Arial;
+  background-color: rgb(50, 167, 217);
+  margin: 0 0 0 20px;
+  border-radius: 50px;
+}
+.delete:hover {
+  background-color: transparent;
+}
