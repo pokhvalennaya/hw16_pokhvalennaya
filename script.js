@@ -1,5 +1,15 @@
 const albums = document.getElementById("albums");
 
+albums.onclick = (event) => {
+  const target = event.target;
+  const isButton = target.className === "delete";
+
+  if (isButton) {
+    const liBlock = target.closest(".album_title");
+    liBlock.remove();
+  }
+};
+
 fetch("https://jsonplaceholder.typicode.com/albums")
   .then((response) => response.json())
   .then((data) => {
@@ -16,16 +26,6 @@ fetch("https://jsonplaceholder.typicode.com/albums")
       button.innerHTML = "delete";
       button.className = "delete";
       li.append(button);
-
-      albums.onclick = (event) => {
-        const target = event.target;
-        const isButton = target.className === "delete";
-
-        if (isButton) {
-          const liBlock = target.closest(".album_title");
-          liBlock.remove();
-        }
-      };
     }
   })
   .catch((error) => console.log(error));
